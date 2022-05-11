@@ -1,9 +1,9 @@
 import { call, put, takeEvery, all, takeLatest } from 'redux-saga/effects'
 import * as constants from "../../constants";
 
-function* executeSubmitContactForm(action) {
+function* executeSubmitContactForm({name, email, message}) {
 
-   yield console.log("chrissy")
+   yield console.log("chrissy " + name, email, message)
     // try {
     //     const user = yield call(Api.fetchUser, action.payload.userId);
     //     yield put({type: "USER_FETCH_SUCCEEDED", user: user});
@@ -12,10 +12,12 @@ function* executeSubmitContactForm(action) {
     // }
 }
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
-export function performSubmitContactForm(action) {
+export function performSubmitContactForm(formValues) {
    return{
        type: constants.types.SUBMIT_CONTACT_FORM,
+       name: formValues.name,
+       email: formValues.email,
+       message: formValues.message,
    }
 }
 
@@ -25,7 +27,7 @@ export function performSubmitContactForm(action) {
 */
 
 function* watchSubmitContactForm() {
-    yield takeEvery("SUBMIT_CONTACT_FORM", executeSubmitContactForm);
+    yield takeEvery(constants.types.SUBMIT_CONTACT_FORM, executeSubmitContactForm);
 }
 
 export default function* sagas(){

@@ -1,20 +1,17 @@
 import React, {useState} from 'react'
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import {useDispatch} from "react-redux";
-import performSubmitContactForm from "../../store/sagas/contact/contactSaga";
-
+import * as contactSaga from "../../store/sagas/contact/contactSaga";
 const Contact = () => {
     const defaultValues = {
         name: "",
-        age: 0,
-        sex: "",
-        os: "",
-        favoriteNumber: 0,
+        message: "",
+        email: "",
+
     };
     const [formValues, setFormValues] = useState(defaultValues)
 
@@ -26,19 +23,17 @@ const Contact = () => {
             [name]: value,
         });
     };
-    const handleOnSubmit = (e) => {
-        const {name, value} = e.target;
-        setFormValues({
-            ...formValues,
-            [name]: value,
-        });
-        console.log("here " + formValues)
-        // // const { userId, dispatch } = this.props
-        // dispatch(performSubmitContactForm())
-    }
+
+    const onHandleSubmit = (formValues) => {
+        dispatch(contactSaga.performSubmitContactForm(formValues))
+
+    };
     const handleSubmit = (event) => {
+        onHandleSubmit(formValues);
         event.preventDefault();
-        console.log(formValues);
+        //  dispatch(performSubmitContactForm(formValues))
+        //
+         console.log(formValues);
     };
 
     return (
