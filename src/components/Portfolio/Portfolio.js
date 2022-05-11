@@ -3,10 +3,10 @@ import React from 'react'
 
 const Portfolio = () =>{
 
-    const myGreeting = 'hello chrissy';
+    const myGreeting = 'hello portfolio';
 
     return(
-      <div>{myGreeting} there</div>
+      <div>{myGreeting}</div>
 
     );
 
