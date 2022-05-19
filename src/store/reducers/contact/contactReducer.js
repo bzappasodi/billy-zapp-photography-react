@@ -1,5 +1,5 @@
 import * as actionTypes from '../../actions/actionType';
-const initialState = {name: '', email: '', comments: ''};
+const initialState = {name: '', email: '', message: ''};
 
 const contactReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -8,7 +8,7 @@ const contactReducer = (state = initialState, action) => {
                 ...state,
                 name: action.name,
                 email: action.email,
-                comments: action.comments
+                message: action.message
             };
         default: return state;
 
