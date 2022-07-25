@@ -1,14 +1,14 @@
 import React from 'react'
 
 
-const Header = () =>{
+const Header = () => {
 
     let headerText = "Billy Zapp Photography";
 
-    return(
-        <div>
-           <h1>{headerText}</h1>
-        </div>
+    return (
+            <header className="page-header">
+                <h1>{headerText}</h1>
+            </header>
     )
 
 }

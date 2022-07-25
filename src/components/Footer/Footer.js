@@ -5,9 +5,9 @@ const Footer = () =>{
 
 
     return(
-        <div>
-            <>&#169; BillyZapp Photography 2022</>
-        </div>
+            <footer className="page-footer">
+            &#169; Billy Zapp Photography 2022
+            </footer>
     )
 
 }

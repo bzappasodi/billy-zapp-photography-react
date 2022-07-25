@@ -3,6 +3,6 @@ import About from './About';
 
 test('renders learn react link', () => {
     render(<About />);
-    const linkElement = screen.getByText(/Hi there about/i);
+    const linkElement = screen.getByText(/Lorem ipsum dolor/i);
     expect(linkElement).toBeInTheDocument();
 });

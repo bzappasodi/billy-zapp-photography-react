@@ -9,6 +9,8 @@ import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
+import SideBar from "./components/Sidebar/Sidebar";
+
 import {Container} from '@mui/material';
 
 function App() {
@@ -16,17 +18,24 @@ function App() {
     return (
 
         <Router>
-            <Container className="App">
-                <Header/>
-                <Navigation/>
-                <Switch>
-                    <Route component={Home} path="/home"/>
-                    <Route component={Portfolio} path="/portfolio"/>
-                    <Route component={About} path="/about"/>
-                    <Route component={Contact} path="/contact"/>
-                </Switch>
-                <Footer/>
-            </Container>
+            <Header/>
+            <main className="page-content">
+                <nav className="content-navigation">
+                    <Navigation/>
+                </nav>
+                <article className="content-article">
+                    <Switch>
+                        <Route component={Home} path="/home"/>
+                        <Route component={Portfolio} path="/portfolio"/>
+                        <Route component={About} path="/about"/>
+                        <Route component={Contact} path="/contact"/>
+                    </Switch>
+                </article>
+                <aside className="content-sidebar">
+                    <SideBar/>
+                </aside>
+            </main>
+            <Footer/>
         </Router>
     );
 }

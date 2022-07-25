@@ -7,16 +7,17 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import {useDispatch} from "react-redux";
 import * as contactSaga from "../../store/sagas/contact/contactSaga";
 import ContactHooks from "./hooks/ContactHooks";
+import {Col, Row} from "react-bootstrap";
 
 // TO DO add hooks file move to use reducer
 const Contact = () => {
-const {
-    formValues, setFormValues,
-    saveError,
-    touched, setTouched,
-    status, setStatus,
-    STATUS
-} = ContactHooks();
+    const {
+        formValues, setFormValues,
+        saveError,
+        touched, setTouched,
+        status, setStatus,
+        STATUS
+    } = ContactHooks();
 
     const dispatch = useDispatch();
     const handleInputChange = (e) => {
@@ -61,8 +62,8 @@ const {
     if (saveError) throw saveError;
     // if(status === STATUS.COMPLETED){return (<div>Completed!</div>)}
     return (
-        <>
-            {!isValid && status === STATUS.SUBMITTED && (
+        <div>
+        {!isValid && status === STATUS.SUBMITTED && (
                 <div role="alert">
                     <p><strong>Please fix the following errors</strong></p>
                     <ul>
@@ -73,78 +74,79 @@ const {
                 </div>
 
             )}
-            <form onSubmit={handleSubmit} noValidate>
-                <FormControl
-                    component="fieldset"
-                    variant="filled"
-                >
-                    <div>
-                        <FormLabel
-                            component="legend"
-                            htmlFor="name"
-                        >
-                            Your Name...
-                        </FormLabel>
-                        <TextField
-                            required
-                            id="name"
-                            label="Name"
-                            name="name"
-                            type="text"
-                            value={formValues.name}
-                            onBlur={handleBlur}
-                            onChange={handleInputChange}
-                        />
-                        <p role="alert">{(touched.name || status === STATUS.SUBMITTED) && errors.name}</p>
-                    </div>
-                    <div>
-                        <FormLabel
-                            component="legend"
-                            htmlFor="email"
-                        >
-                            Your Email...
-                        </FormLabel>
-                        <TextField
-                            required
-                            id="email"
-                            label="Email"
-                            name="email"
-                            type="text"
-                            value={formValues.email}
-                            onBlur={handleBlur}
-                            onChange={handleInputChange}
-                        />
-                        <p role="alert">{(touched.email || status === STATUS.SUBMITTED) && errors.email}</p>
+                <form onSubmit={handleSubmit} noValidate>
+                    <FormControl
+                        component="fieldset"
+                        variant="filled"
+                    >
+                        <div>
+                            <FormLabel
+                                component="legend"
+                                htmlFor="name"
+                            >
+                                Your Name...
+                            </FormLabel>
+                            <TextField
+                                required
+                                id="name"
+                                label="Name"
+                                name="name"
+                                type="text"
+                                value={formValues.name}
+                                onBlur={handleBlur}
+                                onChange={handleInputChange}
+                            />
+                            <p role="alert">{(touched.name || status === STATUS.SUBMITTED) && errors.name}</p>
+                        </div>
+                        <div>
+                            <FormLabel
+                                component="legend"
+                                htmlFor="email"
+                            >
+                                Your Email...
+                            </FormLabel>
+                            <TextField
+                                required
+                                id="email"
+                                label="Email"
+                                name="email"
+                                type="text"
+                                value={formValues.email}
+                                onBlur={handleBlur}
+                                onChange={handleInputChange}
+                            />
+                            <p role="alert">{(touched.email || status === STATUS.SUBMITTED) && errors.email}</p>
 
-                    </div>
-                    <div>
-                        <FormLabel
-                            component="legend"
-                            htmlFor="message"
-                        >
-                            Your Message...
-                        </FormLabel>
-                        <TextField
-                            id="message"
-                            label="Message"
-                            multiline
-                            name="message"
-                            type="text"
-                            value={formValues.message}
-                            onChange={handleInputChange}
-                            onBlur={handleBlur}
-                            rows={4}
-                        />
-                    </div>
-                    <div className="mt-2">
-                        <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                            <Button disabled={status === STATUS.SUBMITTING} className="btn btn-primary" role="button"
-                                    type="submit">{status === STATUS.SUBMITTING ? '...Submitting' : 'Submit'}</Button>
-                        </ButtonGroup>
-                    </div>
-                </FormControl>
-            </form>
-        </>
+                        </div>
+                        <div>
+                            <FormLabel
+                                component="legend"
+                                htmlFor="message"
+                            >
+                                Your Message...
+                            </FormLabel>
+                            <TextField
+                                id="message"
+                                label="Message"
+                                multiline
+                                name="message"
+                                type="text"
+                                value={formValues.message}
+                                onChange={handleInputChange}
+                                onBlur={handleBlur}
+                                rows={4}
+                            />
+                        </div>
+                        <div className="mt-2">
+                            <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                                <Button disabled={status === STATUS.SUBMITTING} className="btn btn-primary" role="button"
+                                        type="submit">{status === STATUS.SUBMITTING ? '...Submitting' : 'Submit'}</Button>
+                            </ButtonGroup>
+                        </div>
+                    </FormControl>
+                </form>
+        </div>
+
     )
 }
 

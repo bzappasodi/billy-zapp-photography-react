@@ -1,15 +1,13 @@
 const users = [
     {
-        id: 1,
-        username: "jsmith",
-        password: "1234",
-        createdAt: 1569268837119
+        name: "jsmith",
+        email: "1234",
+        message: 1569268837119
     },
     {
-        id: 2,
-        username: "jdoe",
-        password: "4567",
-        createdAt: 1569268837600
+        name: "jdoe",
+        email: "4567",
+        message: 1569268837600
     }
 ];
 

@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+key:
+0aadf1f125afc3172648cfb8248ba489
+
+Secret:
+20537241758a72c0
+
+https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=0aadf1f125afc3172648cfb8248ba489&per_page=10&format=json&nojsoncallback=1
+
+https://api.flickr.com/services/rest/?method=flickr.galleries.getList&api_key=0aadf1f125afc3172648cfb8248ba489&per_page=10&format=json&nojsoncallback=1
+https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0aadf1f125afc3172648cfb8248ba489&per_page=10&format=json&nojsoncallback=1
+
+https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0aadf1f125afc3172648cfb8248ba489&photoset_id=72157713351450988&user_id=billyzapp&extras=url_o&format=json&nojsoncallback=1
