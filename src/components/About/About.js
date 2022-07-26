@@ -1,6 +1,4 @@
-import React from 'react'
-import {Col, Row} from "react-bootstrap";
-
+import React from 'react';
 
 const About = () => {
 
@@ -8,12 +6,9 @@ const About = () => {
 
     return (
         <>
-            <Row><h2>About</h2></Row>
-            <Row>
-                <Col xs={2}/>
-                <Col xs={8} className="aboutText text-link">{aboutText}</Col>
-                <Col xs={2}/>
-            </Row>
+
+            <div className="aboutText text-link">{aboutText}</div>
+
         </>
     )
 }

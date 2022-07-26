@@ -7,7 +7,6 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import {useDispatch} from "react-redux";
 import * as contactSaga from "../../store/sagas/contact/contactSaga";
 import ContactHooks from "./hooks/ContactHooks";
-import {Col, Row} from "react-bootstrap";
 
 // TO DO add hooks file move to use reducer
 const Contact = () => {
@@ -64,9 +63,9 @@ const Contact = () => {
     return (
         <div>
         {!isValid && status === STATUS.SUBMITTED && (
-                <div role="alert">
-                    <p><strong>Please fix the following errors</strong></p>
-                    <ul>
+                <div role="alert" >
+                    <p className="alert"><strong>Please fix the following errors</strong></p>
+                    <ul className="error-list">
                         {Object.keys(errors).map((key) => {
                             return <li key={key}>{errors[key]}</li>
                         })}
@@ -78,8 +77,9 @@ const Contact = () => {
                     <FormControl
                         component="fieldset"
                         variant="filled"
+                        style={{minWidth: 320}}
                     >
-                        <div>
+                        <div  style={{minWidth: 320}}>
                             <FormLabel
                                 component="legend"
                                 htmlFor="name"
@@ -95,8 +95,9 @@ const Contact = () => {
                                 value={formValues.name}
                                 onBlur={handleBlur}
                                 onChange={handleInputChange}
+                                style={{minWidth: 320}}
                             />
-                            <p role="alert">{(touched.name || status === STATUS.SUBMITTED) && errors.name}</p>
+                            <p className="alert" role="alert">{(touched.name || status === STATUS.SUBMITTED) && errors.name}</p>
                         </div>
                         <div>
                             <FormLabel
@@ -114,8 +115,9 @@ const Contact = () => {
                                 value={formValues.email}
                                 onBlur={handleBlur}
                                 onChange={handleInputChange}
+                                style={{minWidth: 320}}
                             />
-                            <p role="alert">{(touched.email || status === STATUS.SUBMITTED) && errors.email}</p>
+                            <p className="alert" role="alert">{(touched.email || status === STATUS.SUBMITTED) && errors.email}</p>
 
                         </div>
                         <div>
@@ -135,6 +137,7 @@ const Contact = () => {
                                 onChange={handleInputChange}
                                 onBlur={handleBlur}
                                 rows={4}
+                                style={{minWidth: 320}}
                             />
                         </div>
                         <div className="mt-2">
