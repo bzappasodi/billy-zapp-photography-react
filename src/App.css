@@ -8,6 +8,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.page-header{
+  height: 8rem;
+}
+.page-header h1{
+  padding-top: 25px;
+}
+
 main{
   display: flex;
 }
