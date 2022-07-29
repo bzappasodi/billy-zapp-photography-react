@@ -10,8 +10,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import SideBar from "./components/Sidebar/Sidebar";
-
-import {Container} from '@mui/material';
+import Members from "./components/Members/Members"
 
 function App() {
 
@@ -28,6 +27,7 @@ function App() {
                         <Route component={Home} path="/home"/>
                         <Route component={Portfolio} path="/portfolio"/>
                         <Route component={About} path="/about"/>
+                        <Route component={Members} path="/members"/>
                         <Route component={Contact} path="/contact"/>
                     </Switch>
                 </article>

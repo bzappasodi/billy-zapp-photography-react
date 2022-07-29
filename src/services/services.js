@@ -15,6 +15,24 @@ import axios from 'axios';
 //         });
 // }
 
+export function getContacts() {
+    axios
+        .get("http://localhost:3001/users", {
+            responseType: "json",
+        })
+        .then(function (response) {
+            return(response.data);
+        });
+    //
+    // axios({
+    //     method: "get",
+    //     url: "http://localhost:3001/users",
+    // }).then(function (response) {
+    //     console.log(response.data);
+    // });
+
+}
+
 export function setContactForm({name, email, message}) {
     // console.log("hello " + JSON.stringify(id), name, email, message)
 
