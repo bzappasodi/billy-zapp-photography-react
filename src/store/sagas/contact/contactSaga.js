@@ -1,4 +1,4 @@
-import { call, put, takeEvery, all, takeLatest } from 'redux-saga/effects'
+import { call, takeEvery, all } from 'redux-saga/effects'
 import * as constants from "../../constants";
 import * as setContactForm from "../../../services/services";
 

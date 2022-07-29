@@ -2,34 +2,10 @@ import error from "eslint-plugin-react/lib/util/error";
 
 import axios from 'axios';
 
-// function getContactForm() {
-//     axios.get('http://localhost:3000/users')
-//         .then(resp => {
-//             data = resp.data;
-//             data.forEach(e => {
-//                 console.log(`${e.first_name}, ${e.last_name}, ${e.email}`);
-//             });
-//         })
-//         .catch(error => {
-//             console.log(error);
-//         });
-// }
-
 export function getContacts() {
-    axios
-        .get("http://localhost:3001/users", {
-            responseType: "json",
-        })
-        .then(function (response) {
-            return(response.data);
-        });
-    //
-    // axios({
-    //     method: "get",
-    //     url: "http://localhost:3001/users",
-    // }).then(function (response) {
-    //     console.log(response.data);
-    // });
+
+  return fetch('http://localhost:3001/users')
+        .then((response) => response.json());
 
 }
 
